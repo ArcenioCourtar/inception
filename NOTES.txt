@@ -1,3 +1,6 @@
+TODO:
+Howto https. (currently can only connect through http)
+
 REQUIREMENTS:
 Makefile that sets up entire application with a docker-compose.yml
 
