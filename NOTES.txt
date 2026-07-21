@@ -1,0 +1,17 @@
+REQUIREMENTS:
+Makefile that sets up entire application with a docker-compose.yml
+
+Call the Dockerfiles for each service using docker-compose
+docker-network establishes the connections between containers
+containers need to restart upon crash
+
+Two named volumes: one for your WP database and another for WP website files
+These names volumes must be stored on /home/[login/data on the host machine
+Store variables in a .env
+
+NGINX:
+set up nginx server with TLSv1.2/1.3
+
+WordPress + php-fpm:
+
+MariaDB:

@@ -8,6 +8,7 @@ RUN apt-get install -y nginx openssl -y
 
 # Copy startup script
 COPY tools/startup.sh /
+COPY nginx.conf /etc/nginx/
 
 # run script
 CMD ["/startup.sh"]
