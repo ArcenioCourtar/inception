@@ -8,8 +8,6 @@ echo "HELLO"
 nginx -v
 nginx -t
 
-# nginx -g "daemon off;"
-
-cat /etc/nginx/nginx.conf
+nginx -g "daemon off;"
 
 echo "GOODBYE"
