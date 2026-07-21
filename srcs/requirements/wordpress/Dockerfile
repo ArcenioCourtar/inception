@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-EXPOSE 3306
+EXPOSE 9000
 # install nginx and openssl
 RUN apt-get update -y
 RUN apt-get upgrade -y
