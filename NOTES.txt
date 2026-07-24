@@ -7,6 +7,9 @@ alias mountinception="sudo mount -t vboxsf inception /mnt/inception"
 mytotallyoriginaltheme.zsh-theme:
 PROMPT+="$(echo $USER)${NEWLINE}"
 
+After setting up the new VM with more storage (30GB instead of 10), it works YAAAAY
+I tried increasing the size of the VDI but that led to partitioning hell :(
+
 TODO:
 Howto https. (currently can only connect through http)
 
