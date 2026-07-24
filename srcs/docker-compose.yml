@@ -3,7 +3,12 @@ services:
     build:
       context: requirements/nginx
     container_name: nginx
-    restart: always
+    networks:
+      - inception
     ports:
       - "443:443"
+    restart: always
 
+networks:
+  inception:
+    driver: bridge
