@@ -10,5 +10,8 @@ RUN apt-get install -y nginx openssl -y
 COPY tools/startup.sh /
 COPY nginx.conf /etc/nginx/
 
+# Give execute permission in case compied file doesn't have them
+RUN chmod +x /startup.sh
+
 # run script
 CMD ["/startup.sh"]
