@@ -1,3 +1,12 @@
+USEFUL:
+I made some changes to me zshrc and theme for work on inception.
+Storing them here in case I need to set up a new VM :)
+
+.zshrc:
+alias mountinception="sudo mount -t vboxsf inception /mnt/inception"
+mytotallyoriginaltheme.zsh-theme:
+PROMPT+="$(echo $USER)${NEWLINE}"
+
 TODO:
 Howto https. (currently can only connect through http)
 
