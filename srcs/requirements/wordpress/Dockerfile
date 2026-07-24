@@ -26,7 +26,7 @@ WORKDIR /var/www/html
 COPY tools/startup.sh /
 
 # whee permissions
-RUN chmod +x startup.sh
+RUN chmod +x /startup.sh
 
 EXPOSE 9000
 

@@ -15,15 +15,26 @@ services:
     build:
       context: requirements/wordpress
     container_name: wordpress
+    depends_on:
+      - mariadb
     networks:
       - inception
     volumes:
       - wp_vol:/var/www/html
 
+  mariadb:
+    build:
+      context: requirements/mariadb
+    container_name: mariadb
+    networks:
+      - inception
+    volumes:
+      - db_vol:/var/lib/mysql
+#-----------------
 networks:
   inception:
     driver: bridge
-
+#--------------------
 volumes:
   db_vol:
     driver: local
