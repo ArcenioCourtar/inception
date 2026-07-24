@@ -1,0 +1,9 @@
+services:
+  nginx:
+    build:
+      context: requirements/nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "443:443"
+
