@@ -1,5 +1,5 @@
-DB_DIR	= /home/acourtar/data/db
-WP_DIR	= /home/acourtar/data/website
+DB_DIR	= /home/acourtar/data/mariadb
+WP_DIR	= /home/acourtar/data/wordpress
 RM		= rm -rf
 
 all: up
