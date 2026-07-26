@@ -23,6 +23,7 @@ RUN wget -q https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 WORKDIR /var/www/html
 
 # Copy startup script
+COPY tools/www.conf /etc/php/8.2/fpm/pool.d/
 COPY tools/startup.sh /
 
 # whee permissions
@@ -31,4 +32,4 @@ RUN chmod +x /startup.sh
 EXPOSE 9000
 
 # run script
-CMD ["/startup.sh"]
+ENTRYPOINT ["/startup.sh"]
