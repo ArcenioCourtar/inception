@@ -32,6 +32,4 @@ fi
 nginx -t
 
 # strating nginx
-nginx -g "daemon off;"
-
-echo "GOODBYE"
+exec nginx -g "daemon off;"
