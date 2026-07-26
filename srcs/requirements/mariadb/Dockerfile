@@ -14,6 +14,7 @@ COPY tools/50-server.cnf /etc/mysql/mariadb.conf.d/
 COPY tools/startup.sh /
 
 # Putting secret info here for testing purposes :>
+# TODO: REMOVE THIS LATER TY
 ENV DB_ROOT_PASSWORD=root
 ENV DB_DATABASE_NAME=mariadb
 ENV DB_USER=user
