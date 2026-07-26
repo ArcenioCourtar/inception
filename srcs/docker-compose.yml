@@ -5,6 +5,8 @@ services:
     container_name: nginx
     depends_on:
       - wordpress
+    env_file:
+      - .env
     networks:
       - inception
     ports:
@@ -17,19 +19,25 @@ services:
     container_name: wordpress
     depends_on:
       - mariadb
+    env_file:
+      - .env
     networks:
       - inception
     volumes:
       - wp_vol:/var/www/html
+    restart: always
 
   mariadb:
     build:
       context: requirements/mariadb
     container_name: mariadb
+    env_file:
+      - .env
     networks:
       - inception
     volumes:
       - db_vol:/var/lib/mysql
+    restart: always
 #-----------------
 networks:
   inception:

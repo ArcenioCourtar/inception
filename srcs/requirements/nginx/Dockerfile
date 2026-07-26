@@ -13,6 +13,10 @@ RUN mkdir -p /etc/nginx/ssl
 COPY tools/startup.sh /
 COPY nginx.conf /etc/nginx/
 
+
+RUN chmod +x /etc/nginx/nginx.conf
+RUN envsubst < nginx.conf > nginx.conf
+
 # Give execute permission in case compied file doesn't have them
 RUN chmod +x /startup.sh
 
