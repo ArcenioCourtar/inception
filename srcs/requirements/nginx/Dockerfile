@@ -5,7 +5,10 @@ FROM debian:bookworm
 RUN apt-get update -y
 RUN apt-get install -y nginx openssl
 RUN apt update
+# installed for envsubst
 RUN apt install gettext-base
+# installing nc to test ports
+RUN apt install netcat-openbsd
 
 # create directory for SSL
 RUN mkdir -p /etc/nginx/ssl
