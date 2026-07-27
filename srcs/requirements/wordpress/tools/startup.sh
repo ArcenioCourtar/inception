@@ -27,6 +27,36 @@ if [ ! -f wp-config.php ]; then
     	until mysqladmin -h ${DB_NAME} -u ${DB_USER} -p${DB_USER_PASSWORD} ping; do
         	sleep 2
     	done
+
+    	echo "Creating WordPress Config"
+	wp config create \
+        	--path="/var/www/html/wordpress/" \
+		--dbname="${WP_NAME}" \
+		--dbuser="${DB_USER}" \
+		--dbpass="${DB_USER_PASSWORD}" \
+		--dbhost="${DB_NAME}" \
+		--allow-root
+
+    	# Create Wordpress Admin
+	echo "Creating Wordpress Admin"
+    	wp core install \
+        	--path="/var/www/html/wordpress/" \
+        	--url="${DOMAIN_NAME}" \
+        	--title="inception" \
+        	--admin_user="${WP_ADMIN}" \
+        	--admin_password="${WP_ADMIN_PASSWORD}" \
+        	--admin_email="${WP_ADMIN_EMAIL}" \
+        	--allow-root
+
+   	# Create Wordpress User
+    	echo "Creating Wordpress User" 
+	wp user create ${WP_USER} ${WP_USER_EMAIL} \
+        	--path="/var/www/html/wordpress/" \
+        	--user_pass="${WP_USER_PASSWORD}" \
+			--role=editor
+        	--allow-root
+
+	echo "WordPress finished installing"
 else
 	echo "WordPress is already downloaded"
 fi
