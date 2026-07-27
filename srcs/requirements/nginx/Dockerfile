@@ -15,7 +15,6 @@ RUN mkdir -p /etc/nginx/ssl
 
 # Copy startup script
 COPY tools/startup.sh /
-COPY nginx.conf /
 COPY nginx.conf /etc/nginx/
 
 # Give execute permission in case compied file doesn't have them

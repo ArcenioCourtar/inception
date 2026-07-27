@@ -1,4 +1,7 @@
 USEFUL:
+docker logs [container name] to see messages printed by container while running
+"nc -zv [container name] [port]" To check ports in the network when using docker
+interactive mode
 I made some changes to me zshrc and theme for work on inception.
 Storing them here in case I need to set up a new VM :)
 

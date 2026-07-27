@@ -21,6 +21,12 @@ if [ ! -f wp-config.php ]; then
         	--path="/var/www/html/wordpress/" \
         	--allow-root
     	echo "WordPress downloaded."
+
+		# Note the lack of space betweew -p and the pw, option won't work otherwise :)
+		echo "Pinging MariaDB to check if it's alive"
+    	until mysqladmin -h ${DB_NAME} -u ${DB_USER} -p${DB_USER_PASSWORD} ping; do
+        	sleep 2
+    	done
 else
 	echo "WordPress is already downloaded"
 fi
