@@ -18,7 +18,7 @@ if [ ! -f wp-config.php ]; then
     
     	# Downloading WordPress"
    	wp core download \
-        	--path="/var/www/html/wordpress/" \
+        	--path="/var/www/html/" \
         	--allow-root
     	echo "WordPress downloaded."
 
@@ -30,7 +30,7 @@ if [ ! -f wp-config.php ]; then
 
     	echo "Creating WordPress Config"
 	wp config create \
-        	--path="/var/www/html/wordpress/" \
+        	--path="/var/www/html/" \
 		--dbname="${WP_NAME}" \
 		--dbuser="${DB_USER}" \
 		--dbpass="${DB_USER_PASSWORD}" \
@@ -40,7 +40,7 @@ if [ ! -f wp-config.php ]; then
     	# Create Wordpress Admin
 	echo "Creating Wordpress Admin"
     	wp core install \
-        	--path="/var/www/html/wordpress/" \
+        	--path="/var/www/html/" \
         	--url="${DOMAIN_NAME}" \
         	--title="inception" \
         	--admin_user="${WP_ADMIN}" \
@@ -51,10 +51,10 @@ if [ ! -f wp-config.php ]; then
    	# Create Wordpress User
     	echo "Creating Wordpress User" 
 	wp user create ${WP_USER} ${WP_USER_EMAIL} \
-        	--path="/var/www/html/wordpress/" \
+        	--path="/var/www/html/" \
         	--user_pass="${WP_USER_PASSWORD}" \
-			--role=editor
-        	--allow-root
+			--role=editor \
+			--allow-root
 
 	echo "WordPress finished installing"
 else
