@@ -18,7 +18,9 @@ RUN apt-get install -y \
 RUN apt update -y
 RUN apt install default-mysql-client -y
 
+# here for debugging
 RUN apt-get install telnet -y
+RUN apt install net-tools
 
 RUN wget -q https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
 	&& chmod +x wp-cli.phar \
