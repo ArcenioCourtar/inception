@@ -33,3 +33,16 @@ set up nginx server with TLSv1.2/1.3
 WordPress + php-fpm:
 
 MariaDB:
+
+Peak warning from WordPress: 
+Error: YIKES! It looks like you're running this as root. You probably meant to run this as the user that your WordPress installation exists under.
+
+If you REALLY mean to run this as root, we won't stop you, but just bear in mind that any code on this site will then have full control of your server, making it quite DANGEROUS.
+
+If you'd like to continue as root, please run this again, adding this flag:  --allow-root
+
+If you'd like to run it as the user that this site is under, you can run the following to become the respective user:
+
+    sudo -u USER -i -- wp <command>
+
+Thanks WordPress :)

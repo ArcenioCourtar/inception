@@ -11,6 +11,8 @@ services:
       - inception
     ports:
       - "443:443"
+#    volumes:
+#      - wp_vol:/var/www/html
     restart: always
 
   wordpress:
@@ -23,8 +25,8 @@ services:
       - .env
     networks:
       - inception
-    volumes:
-      - wp_vol:/var/www/html
+#    volumes:
+#      - wp_vol:/var/www/html
     restart: always
 
   mariadb:

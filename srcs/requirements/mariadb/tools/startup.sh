@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 echo "Initializing MariaDB"
 
 # Initialize MySQL data directory if it doesn't exist
@@ -26,9 +24,9 @@ echo "MariaDB is ready!"
 echo "Running SQL setup"
 mysql --socket=/run/mysqld/mysqld.sock -u root << EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';
-CREATE DATABASE IF NOT EXISTS ${DB_DATABASE_NAME};
+CREATE DATABASE IF NOT EXISTS ${WP_NAME};
 CREATE USER IF NOT EXISTS '${DB_USER}'@'%' IDENTIFIED BY '${DB_USER_PASSWORD}';
-GRANT ALL PRIVILEGES ON ${DB_DATABASE_NAME}.* TO '${DB_USER}'@'%';
+GRANT ALL PRIVILEGES ON ${WP_NAME}.* TO '${DB_USER}'@'%';
 FLUSH PRIVILEGES;
 EOF
 

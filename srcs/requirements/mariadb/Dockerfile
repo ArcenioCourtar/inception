@@ -16,7 +16,7 @@ COPY tools/startup.sh /
 # Putting secret info here for testing purposes :>
 # TODO: REMOVE THIS LATER TY
 ENV DB_ROOT_PASSWORD=root
-ENV DB_DATABASE_NAME=mariadb
+ENV WP_NAME=wordpress
 ENV DB_USER=user
 ENV DB_USER_PASSWORD=user
 
