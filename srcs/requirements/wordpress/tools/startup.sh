@@ -25,6 +25,7 @@ if [ ! -f wp-config.php ]; then
         	sleep 2
     	done
 
+		# TODO: take out hardcoded extra PHP (use ${DOMAIN_NAME})
     	echo "Creating WordPress Config"
 	wp config create \
         	--path="/var/www/html/" \
@@ -32,10 +33,11 @@ if [ ! -f wp-config.php ]; then
 		--dbuser="${DB_USER}" \
 		--dbpass="${DB_USER_PASSWORD}" \
 		--dbhost="${DB_NAME}" \
-		--allow-root
-
-#	wp config set WP_HOME "'https://' . \$_SERVER['HTTP_HOST']" --raw --allow-root
-#	wp config set WP_SITEURL "'https://' . \$_SERVER['HTTP_HOST']" --raw --allow-root
+		--allow-root \
+		--extra-php <<'PHP'
+define('WP_HOME', 'https://acourtar.42.fr');
+define('WP_SITEURL', 'https://acourtar.42.fr');
+PHP
 
     	# Create Wordpress Admin
 	echo "Creating Wordpress Admin"
