@@ -34,6 +34,9 @@ if [ ! -f wp-config.php ]; then
 		--dbhost="${DB_NAME}" \
 		--allow-root
 
+#	wp config set WP_HOME "'https://' . \$_SERVER['HTTP_HOST']" --raw --allow-root
+#	wp config set WP_SITEURL "'https://' . \$_SERVER['HTTP_HOST']" --raw --allow-root
+
     	# Create Wordpress Admin
 	echo "Creating Wordpress Admin"
     	wp core install \
