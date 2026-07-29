@@ -2,10 +2,7 @@
 # exit if any of my commands return an error
 set -e
 
-# Use localhost if domain name is not provided
-: "${DOMAIN_NAME:=localhost}"
-
-# substitute $DOMAIN_NAME with the domain set in .env
+# substitute $DOMAIN_NAME with the domain set in .env, place in proper location
 envsubst '${DOMAIN_NAME}' < nginx.conf > /etc/nginx/nginx.conf
 rm nginx.conf
 
