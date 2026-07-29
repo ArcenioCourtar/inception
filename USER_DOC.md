@@ -9,7 +9,7 @@ Once all values have been assigned run ```make```, this will create a directory 
 ```make clean``` to stop containers, delete images and volumes.
 See [Makefile](./Makefile) for more details.
 
-Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr``` if you've configured ```/etc/hosts```.
+Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr``` if you've configured ```/etc/hosts```. (see [DEV_DOC.md](./DEV_DOC.md) for how-to.)
 
 Access the administrator page by visiting ```https://localhost:443/wp-admin``` / ```https://acourtar.42.fr/wp-admin``` and logging in with the username and password specified in the .env file.
 
