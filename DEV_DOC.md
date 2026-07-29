@@ -10,4 +10,4 @@ All values will update accordingly (don't forget about ```/etc/hosts```).
 
 Docker compose commands pertaining to building images and volumes, running the containers, and deleting images and volumes, are all described in the [Makefile](./Makefile).
 
-You can change where the persistent volumes are stored by modifying. GIMME A SEC I NEED TO UPDATE SOMETHING
+You can change where the persistent volumes are stored by modifying the ```DB_DIR``` and ```WP_DIR``` in the Makefile. The [docker-compose.yml](./srcs/docker-compose.yml) uses these same variables defined in the Makefile. If you for some reason don't want to use make and run ```docker compose``` without it, you need to change the ```${DB_DIR}``` and ```${WP_DIR}``` in the docker-compose to a proper path instead of the variable.
