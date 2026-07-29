@@ -9,7 +9,7 @@ The project was developed on a VM running Debian:Trixie, and all containers use 
 ## requirements
 [Docker](https://docs.docker.com/engine/install/), Root privileges and Make.
 ## Usage
-Define user credentials in the .env file in /srcs. Run ```make```.
+Define user credentials in the .env file in /srcs. Run ```make```.  
 You can access the site at https://localhost:443 (or https://acourtar.42.fr if you've added it to your /etc/hosts, see `DEV_DOC.md`)
 
 # Project Description
@@ -26,13 +26,13 @@ When a docker network is set up, the containers within can only communicate with
 When you use a bind mount, a file or directory on the host machine is mounted from the host into a container. By contrast, when you use a volume, a new directory is created within Docker's storage directory on the host machine. Bind mounts are great if you want to share source code/builds between a host and container, or when you want to generate files in the container and persist them on the host. Volumes are easier to back-up and migrate, can moe easily used by multiple containers, and are also faster.
 
 # Resources
-[Dockerdocs manuals](https://docs.docker.com/manuals/) 
-[Debian wiki](https://wiki.debian.org/)
-[nginx docs](https://nginx.org/en/docs/)
-[WordPress documentation](https://wordpress.org/documentation/)
-[MariaDB docs](https://mariadb.org/documentation/)
-[Linux man pages](https://linux.die.net/man/)
-[google.com](https://www.google.com/)
-Other codam students
+[Dockerdocs manuals](https://docs.docker.com/manuals/)   
+[Debian wiki](https://wiki.debian.org/)  
+[nginx docs](https://nginx.org/en/docs/)  
+[WordPress documentation](https://wordpress.org/documentation/)  
+[MariaDB docs](https://mariadb.org/documentation/)  
+[Linux man pages](https://linux.die.net/man/)  
+[google.com](https://www.google.com/)  
+Other codam students 
 
 AI was used to troubleshoot connection issues at the tail end of the project.
