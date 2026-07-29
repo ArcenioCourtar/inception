@@ -1,4 +1,3 @@
-# Testing
 FROM debian:bookworm
 
 # install nginx and openssl
@@ -21,7 +20,3 @@ EXPOSE 443
 
 # run script
 ENTRYPOINT ["/startup_ngx.sh"]
-#- STUFF USED FOR LEARNING/DEBUGGING PREVIOUSLY
-#- not installing anymore to lower image size and build time
-# installing nc to test port connectivity within network
-# RUN apt install netcat-openbsd

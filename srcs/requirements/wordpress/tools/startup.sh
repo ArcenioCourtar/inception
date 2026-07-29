@@ -5,9 +5,6 @@ touch /run/php/php8.2-fpm.pid;
 chown -R www-data:www-data /var/www/*;
 chmod -R 755 /var/www/*;
 
-# chown -R www-data:www-data /var/www/wp-content/uploads
-# chmod -R 755 /var/www/wp-content/uploads
-
 # Download/Install WordPress if not already present
 if [ ! -f wp-config.php ]; then
 
@@ -28,7 +25,6 @@ if [ ! -f wp-config.php ]; then
         	sleep 2
     	done
 
-		# TODO: take out hardcoded extra PHP (use ${DOMAIN_NAME})
     	echo "Creating WordPress Config"
 	wp config create \
         	--path="/var/www/html/" \
@@ -38,8 +34,8 @@ if [ ! -f wp-config.php ]; then
 		--dbhost="${DB_NAME}" \
 		--allow-root \
 		--extra-php <<'PHP'
-define('WP_HOME', 'https://acourtar.42.fr');
-define('WP_SITEURL', 'https://acourtar.42.fr');
+define('WP_HOME', 'https://${DOMAIN_NAME}');
+define('WP_SITEURL', 'https://${DOMAIN_NAME}');
 PHP
 
     	# Create Wordpress Admin
