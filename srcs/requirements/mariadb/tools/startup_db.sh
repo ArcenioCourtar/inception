@@ -1,6 +1,4 @@
 #!/bin/bash
-set -e
-
 echo "Initializing MariaDB"
 
 # Initialize MySQL data directory if it doesn't exist
@@ -14,7 +12,6 @@ echo "Starting temp server for setup (no networking)"
 mysqld --skip-networking --socket=/run/mysqld/mysqld.sock --user=mysql &
 pid="$!"
 
-# Wait for MariaDB to be ready
 echo "Waiting for MariaDB to be ready..."
 until mysqladmin --socket=/run/mysqld/mysqld.sock ping >/dev/null 2>&1; do
     sleep 1

@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 touch /run/php/php8.2-fpm.pid;
 chown -R www-data:www-data /var/www/*;

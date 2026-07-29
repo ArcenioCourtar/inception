@@ -11,12 +11,12 @@ RUN chmod 777 /var/run/mysqld
 
 # Copy startup script
 COPY tools/50-server.cnf /etc/mysql/mariadb.conf.d/
-COPY tools/startup.sh /
+COPY tools/startup_db.sh /
 
 EXPOSE 3306
 
-RUN chmod +x /startup.sh
+RUN chmod +x /startup_db.sh
 
 # run script
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/startup_db.sh"]
 

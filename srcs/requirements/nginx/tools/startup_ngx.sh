@@ -1,6 +1,4 @@
 #!/bin/bash
-# exit if any of my commands return an error
-set -e
 
 # substitute $DOMAIN_NAME with the domain set in .env, place in proper location
 envsubst '${DOMAIN_NAME}' < nginx.conf > /etc/nginx/nginx.conf

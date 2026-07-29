@@ -29,12 +29,12 @@ WORKDIR /var/www/html
 
 # Copy startup script
 COPY tools/www.conf /etc/php/8.2/fpm/pool.d/
-COPY tools/startup.sh /
+COPY tools/startup_wp.sh /
 
 # whee permissions
-RUN chmod +x /startup.sh
+RUN chmod +x /startup_wp.sh
 
 EXPOSE 9000
 
 # run script
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/startup_wp.sh"]
