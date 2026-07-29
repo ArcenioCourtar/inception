@@ -32,7 +32,7 @@ if [ ! -f wp-config.php ]; then
 		--dbpass="${DB_USER_PASSWORD}" \
 		--dbhost="${DB_NAME}" \
 		--allow-root \
-		--extra-php <<'PHP'
+		--extra-php <<PHP
 define('WP_HOME', 'https://${DOMAIN_NAME}');
 define('WP_SITEURL', 'https://${DOMAIN_NAME}');
 PHP
