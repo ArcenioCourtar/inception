@@ -14,13 +14,13 @@ RUN apt install netcat-openbsd
 RUN mkdir -p /etc/nginx/ssl
 
 # Copy startup script
-COPY tools/startup.sh /
-COPY nginx.conf /etc/nginx/
+COPY tools/startup_ngx.sh /
+COPY tools/nginx.conf /etc/nginx/
 
 # Give execute permission in case compied file doesn't have them
-RUN chmod +x /startup.sh
+RUN chmod +x /startup_ngx.sh
 
 EXPOSE 443
 
 # run script
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/startup_ngx.sh"]
