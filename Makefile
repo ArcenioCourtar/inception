@@ -17,6 +17,7 @@ down:
 # Deletes the images and the volumes
 clean:
 	DB_DIR=$(DB_DIR) WP_DIR=$(WP_DIR) docker compose --project-directory srcs down -v --rmi local
+	sudo rm -rf $(DB_DIR) $(WP_DIR)
 
 re: restart
 
