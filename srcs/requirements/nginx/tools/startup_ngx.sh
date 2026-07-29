@@ -23,7 +23,7 @@ else
 	echo "SSL cert already exists. skpping gen"
 fi
 
-# Testing if nginx ocnfig is valid before running
+# Testing if nginx config is valid before running
 nginx -t
 
 # starting nginx
