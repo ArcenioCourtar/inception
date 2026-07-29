@@ -63,10 +63,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/acourtar/data/mariadb
+      device: ${DB_DIR}
   wp_vol:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/acourtar/data/wordpress
+      device: ${WP_DIR}
