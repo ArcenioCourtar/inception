@@ -3,6 +3,7 @@ Go over every file and check for any obvious errors.
 More comments for more clarity?
 write the .md files
 Remove hardcoded domain 
+something something envsubst?
 
 FINAL: remove secrets in .env
 

@@ -5,8 +5,8 @@ touch /run/php/php8.2-fpm.pid;
 chown -R www-data:www-data /var/www/*;
 chmod -R 755 /var/www/*;
 
-chown -R www-data:www-data wp-content/uploads
-chmod -R 755 wp-content/uploads
+# chown -R www-data:www-data /var/www/wp-content/uploads
+# chmod -R 755 /var/www/wp-content/uploads
 
 # Download/Install WordPress if not already present
 if [ ! -f wp-config.php ]; then

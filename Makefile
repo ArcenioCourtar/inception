@@ -1,6 +1,5 @@
 DB_DIR	= /home/acourtar/data/mariadb
 WP_DIR	= /home/acourtar/data/wordpress
-RM		= rm -rf
 
 all: up
 
@@ -17,8 +16,7 @@ down:
 
 # Deletes the images and the volumes
 clean:
-	docker compose --project-directory srcs down --rmi local
-	sudo $(RM) $(DB_DIR) $(WP_DIR)
+	docker compose --project-directory srcs down -v --rmi local
 
 re: restart
 
