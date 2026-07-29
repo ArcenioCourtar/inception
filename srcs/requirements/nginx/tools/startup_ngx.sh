@@ -4,8 +4,10 @@ set -e
 
 # Use localhost if domain name is not provided
 : "${DOMAIN_NAME:=localhost}"
-echo $DOMAIN_NAME
-envsubst '${DOMAIN_NAME}' < /etc/nginx/nginx.conf > output
+
+# substitute $DOMAIN_NAME with the domain set in .env
+envsubst '${DOMAIN_NAME}' < nginx.conf > /etc/nginx/nginx.conf
+rm nginx.conf
 
 # generate SSL cert if we don't have on yet
 if [ ! -f /etc/nginx/ssl/nginx.crt ]; then

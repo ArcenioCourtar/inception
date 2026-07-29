@@ -15,8 +15,7 @@ RUN mkdir -p /etc/nginx/ssl
 
 # Copy startup script
 COPY tools/startup_ngx.sh /
-COPY tools/nginx.conf /etc/nginx/
-RUN envsubst ${DOMAIN_NAME} < /etc/nginx/nginx.conf > output
+COPY tools/nginx.conf /
 # Give execute permission in case compied file doesn't have them
 RUN chmod +x /startup_ngx.sh
 
