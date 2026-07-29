@@ -1,7 +1,17 @@
+# Notice the image: line for each service
+# Normal docker compose nami convention will cause it to prepend the image
+# name with the project (in my case it would do srcs-nginx, fo example).
+# You can specify it to use a particular name for each image so I
+# can have them withut the prepend
+# but if dockerhub has an image of the same name docker compose up
+# will attempt to pull the latest version from dockerhub, which we don't want.
+# You can make sure this doesn't happen by either having an image locally
+# of the same name, or by using the "--pull never" option (This is what I do)
 services:
   nginx:
     build:
       context: requirements/nginx
+    image: nginx
     container_name: nginx
     depends_on:
       - wordpress
@@ -18,6 +28,7 @@ services:
   wordpress:
     build:
       context: requirements/wordpress
+    image: wordpress
     container_name: wordpress
     depends_on:
       - mariadb
@@ -32,6 +43,7 @@ services:
   mariadb:
     build:
       context: requirements/mariadb
+    image: mariadb
     container_name: mariadb
     env_file:
       - .env

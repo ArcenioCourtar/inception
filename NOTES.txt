@@ -1,3 +1,12 @@
+TODO:
+Go over every file and check for any obvious errors.
+More comments for more clarity?
+write the .md files
+Remove hardcoded domain 
+
+FINAL: remove secrets in .env
+
+
 USEFUL:
 docker logs [container name] to see messages printed by container while running
 "nc -zv [container name] [port]" To check ports in the network when using docker
