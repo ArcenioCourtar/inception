@@ -13,13 +13,6 @@ RUN chmod 777 /var/run/mysqld
 COPY tools/50-server.cnf /etc/mysql/mariadb.conf.d/
 COPY tools/startup.sh /
 
-# Putting secret info here for testing purposes :>
-# TODO: REMOVE THIS LATER TY
-ENV DB_ROOT_PASSWORD=root
-ENV WP_NAME=wordpress
-ENV DB_USER=user
-ENV DB_USER_PASSWORD=user
-
 EXPOSE 3306
 
 RUN chmod +x /startup.sh
