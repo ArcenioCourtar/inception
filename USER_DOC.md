@@ -13,7 +13,7 @@ Add this entry to your ```/etc/hosts``` file:
 ```sh
 127.0.0.1 acourtar.42.fr
 ```
-Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr```.
+Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr```. Not adding this to your ```etc/hosts``` makes you unable to navigate beyond the landing page.
 
 Your browser will warn you about a potential security risk due to the SSL certificate being self-signed. Just ignore the warning. :D
 
