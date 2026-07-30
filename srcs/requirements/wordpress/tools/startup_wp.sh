@@ -49,11 +49,13 @@ PHP
         	--allow-root
 
    	# Create Wordpress User
+	# Use roles to change access permissions
+	# (some other roles: editor, subscriber)
     	echo "Creating Wordpress User" 
 	wp user create ${WP_USER} ${WP_USER_EMAIL} \
         	--path="/var/www/html/" \
         	--user_pass="${WP_USER_PASSWORD}" \
-			--role=editor \
+			--role=author \
 			--allow-root
 
 	echo "WordPress finished installing"
