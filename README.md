@@ -10,7 +10,11 @@ The project was developed on a VM running Debian:Trixie, and all containers use 
 [Docker](https://docs.docker.com/engine/install/), Root privileges and Make.
 ## Usage
 Define user credentials in the .env file in /srcs. Run ```make```.  
-You can access the site at https://localhost:443 or https://acourtar.42.fr if you've added it to your /etc/hosts. See [USER_DOC.md](./USER_DOC.md) for exact instructions.
+Add this entry to your ```/etc/hosts``` file:
+```sh
+127.0.0.1 acourtar.42.fr
+```
+Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr```. Not adding this to your ```etc/hosts``` makes you unable to navigate beyond the landing page.
 
 # Project Description
 ## Virtual Machines vs Docker containers
