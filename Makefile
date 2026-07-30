@@ -15,6 +15,10 @@ down:
 	DB_DIR=$(DB_DIR) WP_DIR=$(WP_DIR) docker compose --project-directory srcs down
 
 # Deletes the images and the volumes
+# Because this setup stores the files on your host machine, not just in the Docker volumes
+# calling the command to delete the volumes will remove them for the volume list,
+# but the data will persist on your machine. Therefore a proper "clean" involves
+# getting rid of the directories as well.
 clean:
 	DB_DIR=$(DB_DIR) WP_DIR=$(WP_DIR) docker compose --project-directory srcs down -v --rmi local
 	sudo rm -rf $(DB_DIR) $(WP_DIR)
