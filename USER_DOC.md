@@ -9,7 +9,11 @@ Once all values have been assigned run ```make```, this will create a directory 
 ```make clean``` to stop containers, delete images and volumes.
 See [Makefile](./Makefile) for more details.
 
-Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr``` if you've configured ```/etc/hosts```. (see [DEV_DOC.md](./DEV_DOC.md) for how-to.)
+Add this entry to your ```/etc/hosts``` file:
+```sh
+127.0.0.1 acourtar.42.fr
+```
+Visit the website through ```https://localhost:443```, or ```https://acourtar.42.fr```.
 
 Your browser will warn you about a potential security risk due to the SSL certificate being self-signed. Just ignore the warning. :D
 
